@@ -80,6 +80,14 @@ For full control, the **Config** tab provides an inline editor for `/etc/config/
 
 ## Changelog
 
+### v2.3.3 -2026-05-27
+Added VA and DF to DSCP list
+countRules strips at first # to match daemon's inline-comment handling
+Upload rule validator: same inline-comment fix
+IPv4/IPv6 Quick Add: reject CIDR (daemon uses inet_pton)
+Defaults Quick Add dscp_* selects: offer class names alongside DSCP codepoints
+Sysupgrade survival: writes /lib/upgrade/keep.d/luci-app-qosify for configs, copies installer to /root/qosify-luci.sh; ACL grants /usr/sbin/tc exec; uninstall cleans both up
+
 ### v2.3.2 — 2026-04-29
 - **Modern JS-based LuCI app** — full rewrite from the legacy Lua controller + `.htm` template architecture to the client-side JS view shape used by current LuCI. UI lives in one `main.js` under `/www/luci-static/resources/view/qosify/`, menu entry is a JSON file under `/usr/share/luci/menu.d/`, permissions are a JSON ACL under `/usr/share/rpcd/acl.d/`. Same shape as `luci-app-firewall` and other recent official apps.
 - **No more `luci-compat` dependency** — only `luci-base` is needed now.
