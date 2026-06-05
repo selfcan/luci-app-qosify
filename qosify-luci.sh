@@ -1,6 +1,6 @@
 #!/bin/sh
 # qosify-luci.sh — LuCI App for qosify (modern JS, ash-compatible)
-VERSION="2.4.0"
+VERSION="2.4.1"
 MENU_DIR="/usr/share/luci/menu.d"
 ACL_DIR="/usr/share/rpcd/acl.d"
 VIEW_DIR="/www/luci-static/resources/view/qosify"
@@ -581,8 +581,8 @@ return view.extend({
 
 		// class options
 		var qadCls=E('div',{'class':'qos-qa-row','id':'qac-opts-class','style':'display:none'});
-		this.qaSelect(qadCls,'ingress',DSCP,70,true);
-		this.qaSelect(qadCls,'egress',DSCP,70,true);
+		this.qaSelect(qadCls,'ingress',DSCP,70);
+		this.qaSelect(qadCls,'egress',DSCP,70);
 		this.qaSelect(qadCls,'dscp_prio',DSCP,70);
 		this.qaSelect(qadCls,'dscp_bulk',DSCP,70);
 		this.qaNum(qadCls,'prio_max_avg_pkt_len','500',55);
